@@ -20,12 +20,12 @@ namespace T2
 
         private void btnEntry_Click(object sender, EventArgs e)
         {
-            var personal=new Person();
-            personal.FirstName= txtFirstName.Text;
-            personal.LastName= txtLastName.Text;
-            personal.NationalCode= txtNationalCode.Text;
-            personal.Geder=cmbGender.SelectedItem.ToString();
-            person.Add(personal);
+            var information=new Person();
+            information.FirstName= txtFirstName.Text;
+            information.LastName= txtLastName.Text;
+            information.NationalCode= txtNationalCode.Text;
+            information.Geder=cmbGender.SelectedItem.ToString();
+            person.Add(information);
             FillDGV();
         }
 
