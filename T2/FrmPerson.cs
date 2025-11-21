@@ -33,7 +33,7 @@ namespace T2
             var isValid = information.ValidationInputs();
             if (isValid.Success == true)
             {
-                var isValidCode = Validation.ValidationNC(txtNationalCode.Text);
+                var isValidCode = txtNationalCode.Text.ValidationNC();
                 if (isValidCode.Success == true)
                 {
                     person.Add(information);

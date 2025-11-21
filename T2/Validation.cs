@@ -8,7 +8,7 @@ namespace T2
 {
     static class Validation
     {
-        public static OperationResult ValidationNC(string nationalCode)
+        public static OperationResult ValidationNC(this string nationalCode)
         {
             var valid = new OperationResult();
             valid.Success = true;
