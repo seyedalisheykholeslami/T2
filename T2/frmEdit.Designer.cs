@@ -1,6 +1,6 @@
 ﻿namespace T2
 {
-    partial class FrmPerson
+    partial class frmEdit
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvPerson = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.btnEntry = new System.Windows.Forms.Button();
             this.cmbGender = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -39,49 +37,14 @@
             this.txtNationalCode = new System.Windows.Forms.TextBox();
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.txtFirstName = new System.Windows.Forms.TextBox();
-            this.btnHelp = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPerson)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // dgvPerson
-            // 
-            this.dgvPerson.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPerson.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvPerson.Location = new System.Drawing.Point(165, 0);
-            this.dgvPerson.Margin = new System.Windows.Forms.Padding(4);
-            this.dgvPerson.Name = "dgvPerson";
-            this.dgvPerson.RowHeadersWidth = 51;
-            this.dgvPerson.RowTemplate.Height = 24;
-            this.dgvPerson.Size = new System.Drawing.Size(621, 563);
-            this.dgvPerson.TabIndex = 0;
-            this.dgvPerson.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPerson_CellClick);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnHelp);
-            this.panel1.Controls.Add(this.btnEntry);
-            this.panel1.Controls.Add(this.cmbGender);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.txtNationalCode);
-            this.panel1.Controls.Add(this.txtLastName);
-            this.panel1.Controls.Add(this.txtFirstName);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(165, 563);
-            this.panel1.TabIndex = 1;
             // 
             // btnEntry
             // 
-            this.btnEntry.Location = new System.Drawing.Point(8, 344);
+            this.btnEntry.Location = new System.Drawing.Point(17, 354);
             this.btnEntry.Name = "btnEntry";
             this.btnEntry.Size = new System.Drawing.Size(75, 33);
-            this.btnEntry.TabIndex = 10;
+            this.btnEntry.TabIndex = 20;
             this.btnEntry.Text = "ثبت";
             this.btnEntry.UseVisualStyleBackColor = true;
             this.btnEntry.Click += new System.EventHandler(this.btnEntry_Click);
@@ -92,114 +55,111 @@
             this.cmbGender.Items.AddRange(new object[] {
             "مرد ",
             "زن"});
-            this.cmbGender.Location = new System.Drawing.Point(4, 241);
+            this.cmbGender.Location = new System.Drawing.Point(13, 251);
             this.cmbGender.Name = "cmbGender";
             this.cmbGender.Size = new System.Drawing.Size(111, 30);
-            this.cmbGender.TabIndex = 9;
+            this.cmbGender.TabIndex = 19;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(97, 284);
+            this.label4.Location = new System.Drawing.Point(106, 294);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(54, 24);
-            this.label4.TabIndex = 8;
+            this.label4.TabIndex = 18;
             this.label4.Text = "جنسیت";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(101, 203);
+            this.label3.Location = new System.Drawing.Point(110, 213);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(50, 24);
-            this.label3.TabIndex = 7;
+            this.label3.TabIndex = 17;
             this.label3.Text = "کد ملی";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(66, 123);
+            this.label2.Location = new System.Drawing.Point(75, 133);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(85, 24);
-            this.label2.TabIndex = 6;
+            this.label2.TabIndex = 16;
             this.label2.Text = "نام خانوادگی";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(126, 44);
+            this.label1.Location = new System.Drawing.Point(135, 54);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(25, 24);
-            this.label1.TabIndex = 5;
+            this.label1.TabIndex = 15;
             this.label1.Text = "نام";
             // 
             // txtNationalCode
             // 
-            this.txtNationalCode.Location = new System.Drawing.Point(4, 161);
+            this.txtNationalCode.Location = new System.Drawing.Point(13, 171);
             this.txtNationalCode.Margin = new System.Windows.Forms.Padding(4);
             this.txtNationalCode.Multiline = true;
             this.txtNationalCode.Name = "txtNationalCode";
             this.txtNationalCode.Size = new System.Drawing.Size(111, 32);
-            this.txtNationalCode.TabIndex = 2;
+            this.txtNationalCode.TabIndex = 14;
             // 
             // txtLastName
             // 
-            this.txtLastName.Location = new System.Drawing.Point(4, 78);
+            this.txtLastName.Location = new System.Drawing.Point(13, 88);
             this.txtLastName.Margin = new System.Windows.Forms.Padding(4);
             this.txtLastName.Multiline = true;
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(111, 32);
-            this.txtLastName.TabIndex = 1;
+            this.txtLastName.TabIndex = 13;
             // 
             // txtFirstName
             // 
-            this.txtFirstName.Location = new System.Drawing.Point(4, 4);
+            this.txtFirstName.Location = new System.Drawing.Point(13, 14);
             this.txtFirstName.Margin = new System.Windows.Forms.Padding(4);
             this.txtFirstName.Multiline = true;
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(111, 32);
-            this.txtFirstName.TabIndex = 0;
+            this.txtFirstName.TabIndex = 12;
             // 
-            // btnHelp
-            // 
-            this.btnHelp.Location = new System.Drawing.Point(8, 524);
-            this.btnHelp.Name = "btnHelp";
-            this.btnHelp.Size = new System.Drawing.Size(59, 33);
-            this.btnHelp.TabIndex = 11;
-            this.btnHelp.Text = "Help";
-            this.btnHelp.UseVisualStyleBackColor = true;
-            this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
-            // 
-            // FrmPerson
+            // frmEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(786, 563);
-            this.Controls.Add(this.dgvPerson);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(175, 401);
+            this.Controls.Add(this.btnEntry);
+            this.Controls.Add(this.cmbGender);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtNationalCode);
+            this.Controls.Add(this.txtLastName);
+            this.Controls.Add(this.txtFirstName);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "FrmPerson";
-            this.Text = "FrmPerson";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPerson)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "frmEdit";
+            this.Text = "frmEdit";
+            this.Load += new System.EventHandler(this.frmEdit_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox txtFirstName;
+
+        private System.Windows.Forms.Button btnEntry;
+        private System.Windows.Forms.ComboBox cmbGender;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtNationalCode;
         private System.Windows.Forms.TextBox txtLastName;
-        private System.Windows.Forms.ComboBox cmbGender;
-        private System.Windows.Forms.Button btnEntry;
-        public System.Windows.Forms.DataGridView dgvPerson;
-        private System.Windows.Forms.Button btnHelp;
+        private System.Windows.Forms.TextBox txtFirstName;
     }
 }

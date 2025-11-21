@@ -12,26 +12,67 @@ namespace T2
 {
     public partial class FrmPerson : Form
     {
-        List<Person> person =new List<Person>();
+       public List<Person> person =new List<Person>();
+
         public FrmPerson()
         {
             InitializeComponent();
+            FillDGV();
         }
 
         private void btnEntry_Click(object sender, EventArgs e)
         {
+            
             var information=new Person();
             information.FirstName= txtFirstName.Text;
             information.LastName= txtLastName.Text;
             information.NationalCode= txtNationalCode.Text;
             information.Geder=cmbGender.SelectedItem.ToString();
-            person.Add(information);
-            FillDGV();
+
+
+            var isValid = information.ValidationInputs();
+            if (isValid.Success == true)
+            {
+                var isValidCode = Validation.ValidationNC(txtNationalCode.Text);
+                if (isValidCode.Success == true)
+                {
+                    person.Add(information);
+                    FillDGV();
+                }
+                else
+                {
+                    MessageBox.Show($"{isValidCode.Message}");
+                }
+            }
+            else
+                MessageBox.Show($"{isValid.Message}");
+            
+            
         }
 
         private void FillDGV()
         {
             dgvPerson.DataSource = person.ToList();
+        }
+
+        private void dgvPerson_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DialogResult check = MessageBox.Show("ایا میخواهید این ستر را ویرایش کنید؟","edit",MessageBoxButtons.OKCancel);
+                if (check == DialogResult.OK)
+                {
+                    var frm = new frmEdit();
+                    frm.ShowDialog();
+                    FillDGV();
+                   
+                }
+            }
+        }
+
+        private void btnHelp_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("برای ویرایش اطلاعات خود روی سطر مورد نظر کیلیک کنید");
         }
     }
 }
