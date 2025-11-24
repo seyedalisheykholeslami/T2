@@ -18,25 +18,91 @@ namespace T2
         {
             InitializeComponent();
         }
+        private Person Add()
+        {
 
+                var information = new Person();
+                information.FirstName = txtFirstName.Text;
+                information.LastName = txtLastName.Text;
+                information.NationalCode = txtNationalCode.Text;
+                if (rdbWoman.Checked)
+                {
+                    information.Geder = "زن";
+                }
+                else if (rdbMan.Checked)
+                {
+                    information.Geder = "مرد";
+                }
+                else information.Geder = "نامشخص";
+
+            
+                var valid = information.ValidationInputs();
+            if (valid.IsSuccess == true)
+            {
+                var isValidCode = txtNationalCode.Text.ValidationNC();
+                if (isValidCode.IsSuccess == true)
+                {
+                    return information;
+
+                }
+                else
+                {
+                   
+                    MessageBox.Show($"{isValidCode.Message}");
+                    return null;
+                }
+            }
+            else
+            {
+                MessageBox.Show($"{valid.Message}");
+                return null;
+            }
+               
+        }
         private void btnEntry_Click(object sender, EventArgs e)
         {
-            int row = frm.dgvPerson.CurrentRow.Index;
-            frm.person[row].FirstName=txtFirstName.Text;
-            frm.person[row].LastName=txtLastName.Text;
-            frm.person[row].NationalCode=txtNationalCode.Text;
-            frm.person[row].Geder = cmbGender.SelectedItem.ToString();
-            this.Close();
-
+            if (frm.dgvPerson.SelectedRows.Count == 0)
+            {
+                
+                Person information= Add();
+                if (information != null)
+                {
+                    frm.person.Add(information);
+                    this.Close();
+                }
+                
+            }
+            else if (frm.dgvPerson.SelectedRows.Count == 1)
+            {
+                int row = frm.dgvPerson.CurrentRow.Index;
+                Person information = Add();
+                if (information != null)
+                {
+                    frm.person[row]=information;
+                    this.Close();
+                }
+            }
+            
         }
 
         private void frmEdit_Load(object sender, EventArgs e)
         {
-            int row = frm.dgvPerson.CurrentRow.Index;
-            txtFirstName.Text = frm.person[row].FirstName;
-            txtLastName.Text = frm.person[row].LastName;
-            txtNationalCode.Text = frm.person[row].NationalCode;
-            cmbGender.SelectedItem = frm.person[row].Geder;
+            if (frm.dgvPerson.SelectedRows.Count != 0)
+            {
+                int row = frm.dgvPerson.CurrentRow.Index;
+                txtFirstName.Text = frm.person[row].FirstName;
+                txtLastName.Text = frm.person[row].LastName;
+                txtNationalCode.Text = frm.person[row].NationalCode;
+                if (frm.person[row].Geder == "زن")
+                {
+                    rdbWoman.Checked = true;
+                }
+                else if (frm.person[row].Geder == "مرد")
+                {
+                    rdbMan.Checked = true;
+                }
+ 
+            }
         }
     }
 }

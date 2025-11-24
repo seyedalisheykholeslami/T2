@@ -11,25 +11,25 @@ namespace T2
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string NationalCode { get; set; }
-        public string Geder { get; set; }
+        public string Geder { get; set;}
         public OperationResult ValidationInputs()
         {
             var valid =new OperationResult();
 
             if (FirstName.Length < 3)
             {
-                valid.Success = false;
+                valid.IsSuccess = false;
                 valid.Message = "اسم نمیتواند کمتر از3 کاراکتر باشد";
             }
             else
             if (NationalCode.Length < 10)
             {
-                valid.Success = false;
+                valid.IsSuccess = false;
                 valid.Message = "کد ملی نمیتواند کمتر از 10 رقم باشد است";
             }
             else
             {
-                valid.Success = true;
+                valid.IsSuccess = true;
             }
             return valid;
         }

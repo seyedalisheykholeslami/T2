@@ -11,7 +11,7 @@ namespace T2
         public static OperationResult ValidationNC(this string nationalCode)
         {
             var valid = new OperationResult();
-            valid.Success = true;
+            valid.IsSuccess = true;
             try
             {
                 char[] chArray = nationalCode.ToCharArray();
@@ -33,7 +33,7 @@ namespace T2
                     case "7777777777":
                     case "8888888888":
                     case "9999999999":
-                        valid.Success = false;
+                        valid.IsSuccess = false;
                         break;
                 }
                 int num3 = ((((((((numArray[0] * 10) + (numArray[1] * 9)) + (numArray[2] * 8)) + (numArray[3] * 7)) +
@@ -46,13 +46,13 @@ namespace T2
                 }
                 else
                 {
-                    valid.Success = false;
+                    valid.IsSuccess = false;
                     valid.Message = "کد ملی نامعتبر است";
                 }
             }
             catch
             {
-                valid.Success = false;
+                valid.IsSuccess = false;
             }
             return valid;
         }
